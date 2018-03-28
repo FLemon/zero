@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B92399E8439D10A60368B5C /* Pods_zero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E376E637256083576899D7 /* Pods_zero.framework */; };
 		D307D043206A91D1009511D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307D042206A91D1009511D7 /* AppDelegate.swift */; };
 		D307D045206A91D1009511D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D307D044206A91D1009511D7 /* ViewController.swift */; };
 		D307D048206A91D1009511D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D307D046206A91D1009511D7 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E376E637256083576899D7 /* Pods_zero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F01BCA60C6B44A8890CC043 /* Pods-zero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zero.release.xcconfig"; path = "Pods/Target Support Files/Pods-zero/Pods-zero.release.xcconfig"; sourceTree = "<group>"; };
 		D307D03F206A91D1009511D7 /* zero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D307D042206A91D1009511D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D307D044206A91D1009511D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D307D049206A91D1009511D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D307D04C206A91D1009511D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D307D04E206A91D1009511D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA42C4DBFC57E20BFCB4D702 /* Pods-zero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zero/Pods-zero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B92399E8439D10A60368B5C /* Pods_zero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F0BC9457829568E9D11D586 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04E376E637256083576899D7 /* Pods_zero.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5FCC701DEDB2CBACB784641 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA42C4DBFC57E20BFCB4D702 /* Pods-zero.debug.xcconfig */,
+				3F01BCA60C6B44A8890CC043 /* Pods-zero.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D307D036206A91D1009511D7 = {
 			isa = PBXGroup;
 			children = (
 				D307D041206A91D1009511D7 /* zero */,
 				D307D040206A91D1009511D7 /* Products */,
+				B5FCC701DEDB2CBACB784641 /* Pods */,
+				9F0BC9457829568E9D11D586 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D307D051206A91D1009511D7 /* Build configuration list for PBXNativeTarget "zero" */;
 			buildPhases = (
+				BE718E6A21C218D42BE2DB3A /* [CP] Check Pods Manifest.lock */,
 				D307D03B206A91D1009511D7 /* Sources */,
 				D307D03C206A91D1009511D7 /* Frameworks */,
 				D307D03D206A91D1009511D7 /* Resources */,
+				327657BF8DA0E6898BABDC58 /* [CP] Embed Pods Frameworks */,
+				8B901A93277D3DD73F48AC18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		327657BF8DA0E6898BABDC58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-zero/Pods-zero-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zero/Pods-zero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B901A93277D3DD73F48AC18 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zero/Pods-zero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE718E6A21C218D42BE2DB3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D307D03B206A91D1009511D7 /* Sources */ = {
@@ -272,29 +359,33 @@
 		};
 		D307D052206A91D1009511D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA42C4DBFC57E20BFCB4D702 /* Pods-zero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7RUAJ8W7Y;
 				INFOPLIST_FILE = zero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alliants.jin.zero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D307D053206A91D1009511D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F01BCA60C6B44A8890CC043 /* Pods-zero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B7RUAJ8W7Y;
 				INFOPLIST_FILE = zero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alliants.jin.zero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

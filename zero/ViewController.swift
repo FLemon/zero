@@ -11,24 +11,6 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-struct TableViewSection {
-    var header: String
-    var items: [Item]
-}
-
-extension TableViewSection : AnimatableSectionModelType {
-    typealias Item = String
-    
-    var identity: String {
-        return header
-    }
-    
-    init(original: TableViewSection, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -36,11 +18,19 @@ class ViewController: UIViewController {
     
     private let allCities = ["Shenzhen", "Guangzhou"]
     private let disposeBag = DisposeBag()
-    private var searchedCities = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activateSearchControll()
         
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    private func activateSearchControll() {
         let dataSource = RxTableViewSectionedReloadDataSource<TableViewSection>(
             configureCell: { ds, tv, ip, item in
                 let cell = tv.dequeueReusableCell(withIdentifier: "cityPrototypeCell") ?? UITableViewCell(style: .default, reuseIdentifier: "cityPrototypeCell")
@@ -53,19 +43,13 @@ class ViewController: UIViewController {
             }
         )
         
-        let searchedCities = searchBar.rx.text.orEmpty.asDriver(onErrorJustReturn: "")
+        searchBar.rx.text.orEmpty.asDriver(onErrorJustReturn: "")
             .flatMapLatest { [unowned self] query in
-                return Observable.just(self.allCities.filter { $0.hasPrefix(query) }).asDriver(onErrorJustReturn: [""])
+                return Observable.just(self.allCities.filter { $0.lowercased().hasPrefix(query.lowercased()) })
+                    .asDriver(onErrorJustReturn: [""])
             }
-        
-        searchedCities
             .map { [TableViewSection(header: "searchedResult", items: $0)] }
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

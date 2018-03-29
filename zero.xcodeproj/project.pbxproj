@@ -13,6 +13,7 @@
 		D307D048206A91D1009511D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D307D046206A91D1009511D7 /* Main.storyboard */; };
 		D307D04A206A91D1009511D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D307D049206A91D1009511D7 /* Assets.xcassets */; };
 		D307D04D206A91D1009511D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D307D04B206A91D1009511D7 /* LaunchScreen.storyboard */; };
+		D38F3DF7206D0AFA00BE26FE /* tableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F3DF6206D0AFA00BE26FE /* tableViewSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D307D049206A91D1009511D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D307D04C206A91D1009511D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D307D04E206A91D1009511D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D38F3DF6206D0AFA00BE26FE /* tableViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewSection.swift; sourceTree = "<group>"; };
 		EA42C4DBFC57E20BFCB4D702 /* Pods-zero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zero/Pods-zero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				D307D049206A91D1009511D7 /* Assets.xcassets */,
 				D307D04B206A91D1009511D7 /* LaunchScreen.storyboard */,
 				D307D04E206A91D1009511D7 /* Info.plist */,
+				D38F3DF6206D0AFA00BE26FE /* tableViewSection.swift */,
 			);
 			path = zero;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D307D045206A91D1009511D7 /* ViewController.swift in Sources */,
+				D38F3DF7206D0AFA00BE26FE /* tableViewSection.swift in Sources */,
 				D307D043206A91D1009511D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
